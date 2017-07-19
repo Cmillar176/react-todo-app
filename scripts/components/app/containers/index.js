@@ -1,7 +1,15 @@
-import connect from "fluxthis";
+import connect from "../../../flux/connect";
 import todoStore from "../../../flux/store";
 import App from "../index";
 
 const stores = [todoStore];
 
-export default connect(stores)()(App);
+const mapStateToProps = function() {
+  return {};
+};
+
+const mapDispatchToProps = function() {
+  return {};
+};
+
+export default connect(stores)(mapStateToProps, mapDispatchToProps)(App);
