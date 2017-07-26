@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import React from "react";
 import TodoForm from "../todo-form";
 import TodoList from "../todo-list";
@@ -12,11 +13,21 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <TodoForm />
+        <TodoForm
+          addTodo={this.props.addTodo}
+          userInput={this.props.userInput}
+          setUserInput={this.props.setUserInput}
+        />
         <TodoList todos={myTodos} />
       </div>
     );
   }
 }
+
+App.propTypes = {
+  addTodo: PropTypes.func.isRequired,
+  userInput: PropTypes.string.isRequired,
+  setUserInput: PropTypes.func.isRequired
+};
 
 export default App;
