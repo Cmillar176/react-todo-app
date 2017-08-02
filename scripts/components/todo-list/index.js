@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ImmutablePropTypes from "react-immutable-proptypes";
 import "./stylesheets/index.scss";
 
 class TodoList extends React.Component {
   renderListItems(todos) {
     return todos.map(function(todo, index) {
-      return <li key={`todo-${index}`}>{todo}</li>;
+      return <li key={`todo-${index}`}>{todo.get("text")}</li>;
     });
   }
 
@@ -21,7 +22,7 @@ class TodoList extends React.Component {
 }
 
 TodoList.propTypes = {
-  todos: PropTypes.array.isRequired
+  todos: ImmutablePropTypes.list.isRequired
 };
 
 export default TodoList;

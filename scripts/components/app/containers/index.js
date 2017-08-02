@@ -10,6 +10,7 @@ const mapStateToProps = function() {
   const storeState = todoStore.getState();
 
   return {
+    todos: storeState.get("todos"),
     userInput: storeState.get("userInput")
   };
 };
@@ -18,6 +19,9 @@ const mapDispatchToProps = function() {
   return {
     addTodo(userInput) {
       APIActionCreator.addTodo(userInput);
+    },
+    fetchTodos() {
+      APIActionCreator.fetchTodos();
     },
     setUserInput(userInput) {
       ActionCreator.setUserInput(userInput);

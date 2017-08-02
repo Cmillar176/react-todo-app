@@ -1,13 +1,12 @@
 import PropTypes from "prop-types";
+import ImmutablePropTypes from "react-immutable-proptypes";
 import React from "react";
 import TodoForm from "../todo-form";
 import TodoList from "../todo-list";
 
-const myTodos = ["pick up milk", "teach people react!"];
-
 class App extends React.Component {
   componentDidMount() {
-    // TODO: Make API call to fetch Todos.
+    this.props.fetchTodos();
   }
 
   render() {
@@ -18,7 +17,7 @@ class App extends React.Component {
           userInput={this.props.userInput}
           setUserInput={this.props.setUserInput}
         />
-        <TodoList todos={myTodos} />
+        <TodoList todos={this.props.todos} />
       </div>
     );
   }
@@ -26,6 +25,8 @@ class App extends React.Component {
 
 App.propTypes = {
   addTodo: PropTypes.func.isRequired,
+  fetchTodos: PropTypes.func.isRequired,
+  todos: ImmutablePropTypes.list.isRequired,
   userInput: PropTypes.string.isRequired,
   setUserInput: PropTypes.func.isRequired
 };
