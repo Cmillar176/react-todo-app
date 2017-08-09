@@ -13,9 +13,9 @@ const todoStore = new ImmutableReducerStore({
 
     this.bindActions(
       actions.USER_INPUT_SET,
-      this.setUserInput,
-      actions.FETCH_TODO_SUCCESS,
-      this.fetchTodoSuccess
+      this.userInputSet,
+      actions.TODOS_FETCH_SUCCESS,
+      this.todosFetchSuccess
     );
   },
 
@@ -26,11 +26,11 @@ const todoStore = new ImmutableReducerStore({
   },
 
   private: {
-    setUserInput: function(state, userInput) {
+    userInputSet: function(state, userInput) {
       return state.set("userInput", userInput);
     },
 
-    fetchTodoSuccess: function(state, { response }) {
+    todosFetchSuccess: function(state, { response }) {
       const immutableResponse = Immutable.fromJS(response.body);
       return state.set("todos", immutableResponse);
     }

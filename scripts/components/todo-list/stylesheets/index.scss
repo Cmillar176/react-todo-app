@@ -1,5 +1,25 @@
-.hello {
-  .world {
-    color: red;
+.todo-list__list {
+  margin-top: 24px;
+}
+
+.todo-list__list-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.todo-list__text {
+  font-size: 16px;
+
+  &--completed {
+    text-decoration: line-through;
   }
+}
+
+.todo-list__controls {
+  display: flex;
+  flex-direction: row;
+  margin-top: 8px;
+}
+
+.todo-list__button:not(:last-child) {
+  margin-right: 16px;
 }

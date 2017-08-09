@@ -7,15 +7,15 @@ const apiActionCreator = new APIActionCreator({
   fetchTodos: {
     route: "http://localhost:4320/api/todo",
     method: "GET",
-    pending: actions.FETCH_TODO_PENDING,
-    success: actions.FETCH_TODO_SUCCESS
+    pending: actions.TODOS_FETCH_PENDING,
+    success: actions.TODOS_FETCH_SUCCESS
   },
 
   addTodo: {
     route: "http://localhost:4320/api/todo",
     method: "POST",
-    pending: actions.ADD_TODO_PENDING,
-    success: actions.ADD_TODO_SUCCESS,
+    pending: actions.TODOS_ADD_PENDING,
+    success: actions.TODOS_ADD_SUCCESS,
     createRequest(userInput) {
       return {
         body: {

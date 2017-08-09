@@ -1,5 +1,6 @@
-import PropTypes from "prop-types";
 import React from "react";
+import PropTypes from "prop-types";
+import "./stylesheets/index.scss";
 
 class TodoForm extends React.Component {
   handleInputChange(e) {
@@ -13,16 +14,23 @@ class TodoForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="todo-form__wrapper">
+        <h1>Add a Todo</h1>
         <form onSubmit={e => this.handleFormSubmit(e)}>
-          <label htmlFor="todoText">Text</label>
-          <input
-            id="todoText"
-            onChange={e => this.handleInputChange(e)}
-            placeholder="Enter text here"
-            value={this.props.userInput}
-          />
-          <button type="submit">Submit</button>
+          <div className="form-group">
+            <label htmlFor="todoText">Text</label>
+            <input
+              className="form-control"
+              id="todoText"
+              onChange={e => this.handleInputChange(e)}
+              placeholder="Enter text here"
+              type="text"
+              value={this.props.userInput}
+            />
+          </div>
+          <button className="btn btn-default" type="submit">
+            Submit
+          </button>
         </form>
       </div>
     );
@@ -31,8 +39,8 @@ class TodoForm extends React.Component {
 
 TodoForm.propTypes = {
   addTodo: PropTypes.func.isRequired,
-  userInput: PropTypes.string.isRequired,
-  setUserInput: PropTypes.func.isRequired
+  setUserInput: PropTypes.func.isRequired,
+  userInput: PropTypes.string.isRequired
 };
 
 export default TodoForm;

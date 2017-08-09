@@ -1,8 +1,9 @@
+import React from "react";
 import PropTypes from "prop-types";
 import ImmutablePropTypes from "react-immutable-proptypes";
-import React from "react";
 import TodoForm from "../todo-form";
 import TodoList from "../todo-list";
+import "./stylesheets/index.scss";
 
 class App extends React.Component {
   componentDidMount() {
@@ -11,7 +12,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="todo-spa__wrapper">
         <TodoForm
           addTodo={this.props.addTodo}
           userInput={this.props.userInput}
@@ -26,9 +27,9 @@ class App extends React.Component {
 App.propTypes = {
   addTodo: PropTypes.func.isRequired,
   fetchTodos: PropTypes.func.isRequired,
+  setUserInput: PropTypes.func.isRequired,
   todos: ImmutablePropTypes.list.isRequired,
-  userInput: PropTypes.string.isRequired,
-  setUserInput: PropTypes.func.isRequired
+  userInput: PropTypes.string.isRequired
 };
 
 export default App;

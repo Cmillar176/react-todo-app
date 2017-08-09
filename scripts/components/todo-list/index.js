@@ -4,19 +4,30 @@ import ImmutablePropTypes from "react-immutable-proptypes";
 import "./stylesheets/index.scss";
 
 class TodoList extends React.Component {
-  renderListItems(todos) {
-    return todos.map(function(todo, index) {
-      return <li key={`todo-${index}`}>{todo.get("text")}</li>;
+  renderList() {
+    const listItems = this.props.todos.map((todo, index) => {
+      return (
+        <li className="todo-list__list-item" key={index}>
+          {todo.get("text")}
+        </li>
+      );
     });
+
+    return (
+      <ol className="todo-list__list">
+        {listItems}
+      </ol>
+    );
   }
 
   render() {
-    const listItems = this.renderListItems(this.props.todos);
+    const content = this.renderList();
 
     return (
-      <ol>
-        {listItems}
-      </ol>
+      <div className="todo-list__container">
+        <h1 className="todo-list__heading">Todos</h1>
+        {content}
+      </div>
     );
   }
 }
