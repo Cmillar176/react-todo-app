@@ -10,6 +10,7 @@ const mapStateToProps = function() {
   const storeState = todoStore.getState();
 
   return {
+    requestInFlight: storeState.get("requestInFlight"),
     todos: storeState.get("todos"),
     userInput: storeState.get("userInput")
   };

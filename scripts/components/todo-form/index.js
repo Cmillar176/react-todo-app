@@ -8,8 +8,12 @@ class TodoForm extends React.Component {
   }
 
   handleFormSubmit(e) {
-    this.props.addTodo(this.props.userInput);
     e.preventDefault();
+
+    const trimmedUserInput = this.props.userInput.trim();
+    if (trimmedUserInput.length > 0) {
+      this.props.addTodo(trimmedUserInput);
+    }
   }
 
   render() {

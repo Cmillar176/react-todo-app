@@ -20,8 +20,14 @@ class TodoList extends React.Component {
     );
   }
 
+  renderEmptyMessage() {
+    return <p>There are no todos!</p>;
+  }
+
   render() {
-    const content = this.renderList();
+    const content = this.props.todos.size === 0
+      ? this.renderEmptyMessage()
+      : this.renderList();
 
     return (
       <div className="todo-list__container">
