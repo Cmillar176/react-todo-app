@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TodoForm renders correctly 1`] = `
+<div
+  className="todo-form__wrapper"
+>
+  <h1>
+    Add a Todo
+  </h1>
+  <form
+    onSubmit={[Function]}
+  >
+    <div
+      className="form-group"
+    >
+      <label
+        htmlFor="todoText"
+      >
+        Text
+      </label>
+      <input
+        className="form-control"
+        id="todoText"
+        onChange={[Function]}
+        placeholder="Enter text here"
+        type="text"
+        value="Pick up milk"
+      />
+    </div>
+    <button
+      className="btn btn-default"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
