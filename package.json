@@ -8,7 +8,9 @@
   "scripts": {
     "build": "webpack",
     "precommit": "lint-staged",
-    "start": "node server/index.js & webpack-dev-server"
+    "start": "node server/index.js & webpack-dev-server",
+    "test": "jest --config=.jestrc.json",
+    "test:watch": "npm test -- --watch"
   },
   "lint-staged": {
     "*.js": [
@@ -19,18 +21,24 @@
   "devDependencies": {
     "autoprefixer": "7.1.1",
     "babel-core": "6.25.0",
+    "babel-jest": "20.0.3",
     "babel-loader": "7.0.0",
     "babel-preset-env": "1.5.2",
     "babel-preset-react": "6.24.1",
     "body-parser": "1.17.2",
     "css-loader": "0.28.4",
+    "enzyme": "2.9.1",
     "express": "4.15.3",
     "html-webpack-plugin": "2.28.0",
     "husky": "0.13.4",
+    "jest": "20.0.4",
+    "jest-enzyme": "3.8.1",
+    "jest-immutable-matchers": "1.5.0",
     "lint-staged": "3.6.1",
     "node-sass": "4.5.3",
     "postcss-loader": "2.0.5",
     "prettier": "1.4.4",
+    "react-test-renderer": "15.6.1",
     "sass-loader": "6.0.5",
     "style-loader": "0.18.2",
     "uuid": "3.0.1",
